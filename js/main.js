@@ -1,61 +1,18 @@
-// *Variables*
-// Declare a variable and assign it to your fav drink as a string. Make sure there is no whitespace on either side of the string, and print the value to the console
-let favDrink = "coffee";
-// console.log(favDrink);
-
-//Declare a variable, assign it a string of multiple words, and check to see if one of the words is "apple".
-let fruitBasket = "banana apple orange";
-// console.log(fruitBasket.includes("apple"));
-
-if(fruitBasket.includes("apple")) {
-    // console.log("Apple is in the fruit basket!");
-} else {
-    // console.log("Apple is not in the fruit basket.");
-}
-
-// *Functions*
-// Create a function that returns rock, paper, or scissors as randomly as possible
+//Function to get player choice and play game
 function getRandomChoice() {
     const choices = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
 // console.log(`Server says: ${getRandomChoice()}`);
-// alert(`Bot chose: ${getRandomChoice()}`);
 
-// *Conditionals*
-//Create a function that takes in a choice (rock, paper, or scissors) 
-// and determines if they won a game of rock paper scissors against a bot using the above function
-// function playGame(playerChoice) {
-//     const botChoice = getRandomChoice();
-//     console.log(`Player chose: ${playerChoice}`);
-//     console.log(`Server Says: ${botChoice}`);
-
-//     if (playerChoice === botChoice) {
-//         console.log("It's a tie!");
-//     } else if (
-//         (playerChoice === "rock" && botChoice === "scissors") ||
-//         (playerChoice === "paper" && botChoice === "rock") ||
-//         (playerChoice === "scissors" && botChoice === "paper")
-//     ) {
-//         console.log("Player wins!");
-//     } else {
-//         console.log("Server wins!");
-//     }
-// }
-
-//*Loops*
-//Create a function that takes an array of choices. Play the game x times where x is the number of choices 
-// in the array. Print the results of each game to the console.
-// console.log(playMultipleGames(["rock", "paper", "rock", "rock", "scissors", "paper"]));
-
+//Call the chioce variable from the  getRandomChioce function
 function playMultipleGames(choices) {
     choices.forEach(choice => {
         playGame(choice);
     });
 }
 
-// --- DOM Interphase for Rock Paper Scissors ---
 
 let selectedChoice = null;
 
