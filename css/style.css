@@ -21,16 +21,20 @@ img{
 /* ADDITIONAL STYLES
 /*******************************************/
 
+@font-face { 
+	font-family: 'Game Of Squids';
+	src: url('font/Game Of Squids.ttf');
+}
 
-body {
-				background: linear-gradient(135deg, #232526 0%, #414345 100%);
-				min-height: 100vh;
-				margin: 0;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-      font-family: 'Orbitron', Arial, sans-serif;
-      }
+body{
+	background: linear-gradient(135deg, #232526 0%, #414345 100%);
+	min-height: 100vh;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Game Of Squids';
+}
 
 
 body::before {
@@ -79,9 +83,17 @@ main, h2, .rps-btn, #playBtn, #resultArea {
 				width: 100%;
 				text-align: center;
 			}
+
+			.game-intro {
+				font-size: .8em;
+				color: #fff;
+				margin-bottom: 15px;
+				letter-spacing: 1px;
+				text-shadow: 0 2px 8px #000;
+			}
 			.game-title {
-				font-family: 'Orbitron', Arial, sans-serif;
-				font-size: 2.2em;
+				font-family: 'Game Of Squids';
+				font-size: 2em;
 				color: #fff;
 				margin-bottom: 25px;
 				letter-spacing: 2px;
@@ -136,15 +148,15 @@ main, h2, .rps-btn, #playBtn, #resultArea {
 			}
 
 .sound-controls {
-						margin-top: 30px;
-						background: rgba(0,0,0,0.25);
-						border-radius: 12px;
-						padding: 18px 12px 12px 12px;
-						box-shadow: 0 2px 8px #0003;
-						max-width: 350px;
-						width: 100%;
-						text-align: center;
-					}
+		margin-top: 30px;
+		background: rgba(0,0,0,0.25);
+		border-radius: 12px;
+		padding: 18px 12px 12px 12px;
+		box-shadow: 0 2px 8px #0003;
+		max-width: 350px;
+		width: 100%;
+		text-align: center;
+	}
 					.sound-btn-row {
 						display: flex;
 						justify-content: center;
