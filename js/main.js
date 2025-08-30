@@ -80,19 +80,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         // Play game and show result
         const botChoice = getRandomChoice();
-        let result = `Player chose: ${selectedChoice}<br>Bot chose: ${botChoice}<br>`;
+        let resultMsg = `Player chose: ${selectedChoice}<br>Server Says: ${botChoice}<br>`;
+        let resultClass = '';
         if (selectedChoice === botChoice) {
-            result += "It's a tie!";
+            resultMsg += "It's a tie!";
+            resultClass = 'result-tie';
         } else if (
             (selectedChoice === "rock" && botChoice === "scissors") ||
             (selectedChoice === "paper" && botChoice === "rock") ||
             (selectedChoice === "scissors" && botChoice === "paper")
         ) {
-            result += "Player wins!";
+            resultMsg += "Player wins!";
+            resultClass = 'result-win';
         } else {
-            result += "Bot wins!";
+            resultMsg += "Server Wins!";
+            resultClass = 'result-lose';
         }
-        displayResult(result);
+        displayResult(resultMsg, resultClass);
         playResultSound();
     });
 });
@@ -108,7 +112,12 @@ function playResultSound() {
 }
 
 function displayResult(msg) {
-    document.getElementById('resultArea').innerHTML = msg;
+    let area = document.getElementById('resultArea');
+    area.innerHTML = msg;
+    area.classList.remove('result-win', 'result-lose', 'result-tie');
+    if (arguments.length > 1 && arguments[1]) {
+        area.classList.add(arguments[1]);
+    }
 }
 
 function highlightSelected(btnId) {
